@@ -1,0 +1,361 @@
+# depslib dependency file v1.0
+1558049414 source:d:\brizuela.adrian\brizuela.adrian 1er parcial\orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"utn.h"
+
+1558472158 h"
+
+1558054631 source:d:\brizuela.adrian\brizuela.adrian 1er parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"hardcode.h"
+
+1558050111 d:\brizuela.adrian\brizuela.adrian 1er parcial\orquesta.h
+
+1558032638 d:\brizuela.adrian\brizuela.adrian 1er parcial\utn.h
+
+1558035870 source:d:\brizuela.adrian\brizuela.adrian 1er parcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+
+1558461378 
+
+1558054353 source:d:\brizuela.adrian\brizuela.adrian 1er parcial\hardcode.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	"hardcode.h"
+	"utn.h"
+
+1558054369 d:\brizuela.adrian\brizuela.adrian 1er parcial\hardcode.h
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558472076 to.h"
+
+1558053024 source:d:\brizuela.adrian\brizuela.adrian 1er parcial\instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Instrumento.h"
+	"utn.h"
+
+1558053205 d:\brizuela.adrian\brizuela.adrian 1er parcial\musico.h
+	"Instrumento.h"
+
+1558052989 d:\brizuela.adrian\brizuela.adrian 1er parcial\instrumento.h
+
+1558054353 source:d:\brizuela.adrian\brizuela.adrian 1er parcial\musico.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"utn.h"
+
+1558471326 source:e:\brizuela.adrian 1er parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"hardcode.h"
+
+1558471098 e:\brizuela.adrian 1er parcial\orquesta.h
+
+1558470672 e:\brizuela.adrian 1er parcial\instrumento.h
+
+1558469916 e:\brizuela.adrian 1er parcial\musico.h
+	"Instrumento.h"
+
+1558470818 e:\brizuela.adrian 1er parcial\hardcode.h
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558471356 source:e:\brizuela.adrian 1er parcial\hardcode.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	<ctype.h>
+	"hardcode.h"
+	"utn.h"
+
+1558461602 e:\brizuela.adrian 1er parcial\utn.h
+
+1558472076 source:e:\brizuela.adrian 1er parcial\instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Instrumento.h"
+	"utn.h"
+
+1558472158 source:e:\brizuela.adrian 1er parcial\musico.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"utn.h"
+
+1558472158 source:e:\brizuela.adrian 1er parcial\orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"utn.h"
+
+1558461378 source:e:\brizuela.adrian 1er parcial\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+
+1558475633 source:/media/alumno/KINGSTON/Brizuela.Adrian 1er Parcial/hardcode.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"hardcode.h"
+	"utn.h"
+
+1558460018 /media/alumno/KINGSTON/Brizuela.Adrian 1er Parcial/hardcode.h
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558459872 /media/alumno/KINGSTON/Brizuela.Adrian 1er Parcial/Instrumento.h
+
+1558475837 /media/alumno/KINGSTON/Brizuela.Adrian 1er Parcial/utn.h
+
+1558475681 source:/media/alumno/KINGSTON/Brizuela.Adrian 1er Parcial/Instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Instrumento.h"
+	"utn.h"
+
+1558475708 source:/media/alumno/KINGSTON/Brizuela.Adrian 1er Parcial/main.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"hardcode.h"
+
+1558475837 source:/media/alumno/KINGSTON/Brizuela.Adrian 1er Parcial/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+
+1558478200 source:/home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/Instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"Instrumento.h"
+	"utn.h"
+
+1558459872 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/Instrumento.h
+
+1558477683 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/utn.h
+
+1558477683 source:/home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+
+1558483512 source:/home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/hardcode.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"hardcode.h"
+	"utn.h"
+
+1558483855 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/hardcode.h
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558460298 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/ORQUESTA.H
+
+1558459116 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/MUSICO.H
+	"Instrumento.h"
+
+1558483855 source:/home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/main.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"hardcode.h"
+	"utn.h"
+	"informes.h"
+
+1558460298 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/Orquesta.h
+
+1558459116 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/Musico.h
+	"Instrumento.h"
+
+1558478200 source:/home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/Musico.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"utn.h"
+
+1558478200 source:/home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/Orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"Orquesta.h"
+	"utn.h"
+
+1558482867 source:/home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/informes.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"hardcode.h"
+	"utn.h"
+	"informes.h"
+
+1558482284 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/informes.h
+
+1559074137 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/hardcode.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"hardcode.h"
+	"utn.h"
+
+1558483982 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/hardcode.h
+	"Orquesta.h"
+	"Musico.h"
+	"Instrumento.h"
+
+1558483982 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Orquesta.h
+
+1558483982 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Musico.h
+	"Instrumento.h"
+
+1558988552 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Instrumento.h
+
+1558483982 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/utn.h
+
+1559079287 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/informes.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"hardcode.h"
+	"utn.h"
+	"informes.h"
+
+1559080054 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/informes.h
+
+1559074137 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"Instrumento.h"
+	"utn.h"
+
+1559075444 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/main.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"hardcode.h"
+	"utn.h"
+	"informes.h"
+
+1558483982 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Musico.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"Orquesta.h"
+	"Instrumento.h"
+	"Musico.h"
+	"utn.h"
+
+1558988827 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	<ctype.h>
+	"Orquesta.h"
+	"utn.h"
+
+1558483982 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"utn.h"
+
