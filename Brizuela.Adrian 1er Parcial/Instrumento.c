@@ -6,10 +6,17 @@
 #include "Instrumento.h"
 #include "utn.h"
 
+/** \brief Inicializa el array de instrumentos poniendo todos los campos isEmpty en 0.
+ *
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return int 0 if Ok
+ *
+ */
 int ins_init(sInstrumento* insLista, int INS_CANT)
 {
 
-    int i = 0;
+    int i;
 
     for(i = 0; i < INS_CANT; i++)
     {
@@ -21,6 +28,13 @@ int ins_init(sInstrumento* insLista, int INS_CANT)
     return 0;
 }
 
+/** \brief Alta de instrumentos
+ *
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return int -1 si no encontro lugar, 0 if Ok
+ *
+ */
 int ins_alta(sInstrumento* insLista, int INS_CANT)
 {
 
@@ -28,7 +42,6 @@ int ins_alta(sInstrumento* insLista, int INS_CANT)
     int indice;
     int ret = -1;
     int isValid = -1;
-    //char isIntAux[50];
 
     indice = ins_getFreeSpot(insLista, INS_CANT);
 
@@ -54,6 +67,12 @@ int ins_alta(sInstrumento* insLista, int INS_CANT)
                 strncpy(insLista[indice].nombre, insNuevo.nombre, INS_LEN);
 
             }
+            else
+            {
+
+                printf("Debe ingresar solo letras. Reintente.\n");
+
+            }
         }
         while(isValid != 1);
 
@@ -68,6 +87,12 @@ int ins_alta(sInstrumento* insLista, int INS_CANT)
             {
 
                 strncpy(insLista[indice].tipo, insNuevo.tipo, 2);
+            }
+            else
+            {
+
+                printf("Debe ingresar solo numeros. Reintente.\n");
+
             }
         }
         while(isValid != 1);
@@ -93,10 +118,9 @@ int ins_alta(sInstrumento* insLista, int INS_CANT)
         {
             insLista[indice].id = indice + 1;
             insLista[indice].isEmpty = 1;
-            printf("Orquesta cargada exitosamente!\n");
+            printf("Instrumento cargado exitosamente!\n");
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
         }
         ret = 0;
     }
@@ -104,15 +128,22 @@ int ins_alta(sInstrumento* insLista, int INS_CANT)
     return ret;
 }
 
+/** \brief Busca un lugar libre disponilbe
+ *
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return int La posicion libre en el indice
+ *
+ */
 int ins_getFreeSpot(sInstrumento* insLista, int INS_CANT)
 {
 
-    int index = -1, i=0;
+    int index, i=0;
 
     for(i=0; i<INS_CANT; i++)
     {
 
-        if( insLista[i].isEmpty == 0)
+        if(insLista[i].isEmpty == 0)
         {
             index = i;
             break;
@@ -121,6 +152,13 @@ int ins_getFreeSpot(sInstrumento* insLista, int INS_CANT)
     return index;
 }
 
+/** \brief Busca un instrumento por ID
+ *
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return int El indice que encontro
+ *
+ */
 int ins_findById(sInstrumento* insLista, int INS_CANT, int id)
 {
 
@@ -129,7 +167,7 @@ int ins_findById(sInstrumento* insLista, int INS_CANT, int id)
 
     for(i=0; i < INS_CANT; i++)
     {
-        if( insLista[i].id == id && insLista[i].isEmpty == 1)
+        if(insLista[i].id == id && insLista[i].isEmpty == 1)
         {
             index = i;
             break;
@@ -138,20 +176,45 @@ int ins_findById(sInstrumento* insLista, int INS_CANT, int id)
     return index;
 }
 
+/** \brief Muestra un instrumento determinado.
+ *
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return void
+ *
+ */
 void ins_mostrarUno(sInstrumento instrumento)
 {
 
     printf("| %2i | %15s | %15s |\n", instrumento.id, instrumento.nombre, instrumento.desc);
 }
 
+/** \brief Lista todos los instrumentos usando la funcion ins_mostrarUno()
+ *
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return void
+ *
+ */
 void ins_listarTodos(sInstrumento* insLista, int INS_CANT)
 {
 
-    int i;
+    int i, j;
+    sInstrumento miAuxiliar;
 
-    /*printf("=====================================================================\n"
-           "||                        Listado de Orquestas                     ||\n"
-           "=====================================================================\n");*/
+    //Ordeno por insercion usando id
+    for (i=1; i < INS_CANT; i++)
+    {
+        miAuxiliar = insLista[i];
+        j = i-1;
+        while (insLista[j].id > miAuxiliar.id && j>=0)
+        {
+            insLista[j+1] = insLista[j];
+            j--;
+        }
+        insLista[j+1] = miAuxiliar;
+    }
+
     for(i = 0; i < INS_CANT; i++)
     {
 
@@ -163,5 +226,4 @@ void ins_listarTodos(sInstrumento* insLista, int INS_CANT)
         }
 
     }
-    /*printf("=====================================================================\n");*/
 }

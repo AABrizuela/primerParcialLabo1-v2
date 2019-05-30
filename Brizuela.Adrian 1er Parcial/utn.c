@@ -259,3 +259,9 @@ char* strlwr(char* s)
     return s;
 }
 
+void pause(){
+
+    printf("Presione enter para continuar...");
+    getchar();
+
+}

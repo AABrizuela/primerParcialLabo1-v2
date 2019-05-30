@@ -53,6 +53,11 @@ int orq_alta(sOrquesta* orqLista, int ORQ_CANT)
 
                 strncpy(orqLista[indice].nombre, orqNueva.nombre, ORQ_LEN);
 
+            }else
+            {
+
+                printf("Debe ingresar solo letras. Reintente.\n");
+
             }
         }
         while(isValid != 1);
@@ -70,6 +75,11 @@ int orq_alta(sOrquesta* orqLista, int ORQ_CANT)
 
                 strncpy(orqLista[indice].lugar, orqNueva.lugar, ORQ_LEN);
 
+            }else
+            {
+
+                printf("Debe ingresar solo letras. Reintente.\n");
+
             }
         }
         while(isValid != 1);
@@ -85,6 +95,11 @@ int orq_alta(sOrquesta* orqLista, int ORQ_CANT)
             {
 
                 strncpy(orqLista[indice].tipo, orqNueva.tipo, 2);
+            }else
+            {
+
+                printf("Debe ingresar solo numeros. Reintente.\n");
+
             }
         }
         while(isValid != 1);
@@ -114,7 +129,8 @@ int orq_alta(sOrquesta* orqLista, int ORQ_CANT)
             orqLista[indice].id = indice + 1;
             orqLista[indice].isEmpty = 1;
             printf("Orquesta cargada exitosamente!\n");
-
+            __fpurge(stdin);
+            pause();
         }
         ret = 0;
     }
@@ -126,12 +142,12 @@ int orq_alta(sOrquesta* orqLista, int ORQ_CANT)
 int orq_getFreeSpot(sOrquesta* orqLista, int ORQ_CANT)
 {
 
-    int index = -1, i=0;
+    int index, i=0;
 
     for(i=0; i<ORQ_CANT; i++)
     {
 
-        if( orqLista[i].isEmpty == 0)
+        if(orqLista[i].isEmpty == 0)
         {
             index = i;
             break;
@@ -150,7 +166,9 @@ int orq_baja(sOrquesta* orqLista, int ORQ_CANT)
     char autorBorrar;
     sOrquesta orquesta;
 
-    printf("Ingrese codigo: ");
+    orq_listarTodos(orqLista, ORQ_CANT);
+
+    printf("Ingrese id a eliminar: ");
     scanf("%d", &id);
 
     indice = orq_findById(orqLista, ORQ_CANT, id);
@@ -182,8 +200,7 @@ int orq_baja(sOrquesta* orqLista, int ORQ_CANT)
             ret = 0;
         }
         __fpurge(stdin);
-        printf("Prsione cualquier tecla para continuar...");
-        getchar();
+        pause();
     }
 
     return ret;
@@ -215,11 +232,22 @@ void orq_mostrarUno(sOrquesta orquesta)
 void orq_listarTodos(sOrquesta* orqLista, int ORQ_CANT)
 {
 
-    int i;
+    int i, j;
+    sOrquesta miAuxiliar;
 
-    /*printf("=====================================================================\n"
-           "||                        Listado de Orquestas                     ||\n"
-           "=====================================================================\n");*/
+    //Ordeno por insercion usando id
+    for (i=1; i < ORQ_CANT; i++)
+    {
+        miAuxiliar = orqLista[i];
+        j = i-1;
+        while (orqLista[j].id > miAuxiliar.id && j>=0)
+        {
+            orqLista[j+1] = orqLista[j];
+            j--;
+        }
+        orqLista[j+1] = miAuxiliar;
+    }
+
     for(i = 0; i < ORQ_CANT; i++)
     {
 
@@ -231,8 +259,6 @@ void orq_listarTodos(sOrquesta* orqLista, int ORQ_CANT)
         }
 
     }
-
-    /*printf("=====================================================================\n");*/
 
 }
 

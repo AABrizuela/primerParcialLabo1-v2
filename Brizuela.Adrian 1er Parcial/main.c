@@ -101,8 +101,7 @@ int main()
         case 3:
             orq_listarTodos(orqLista, ORQ_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 4:
@@ -120,8 +119,7 @@ int main()
         case 7:
             mus_listarTodos(musLista, MUS_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 8:
@@ -131,8 +129,7 @@ int main()
         case 9:
             ins_listarTodos(insLista, MUS_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 10:
@@ -146,8 +143,7 @@ int main()
         default:
             printf("Error. Las opciones correctas van del 1 al 11. ");
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
         }
 

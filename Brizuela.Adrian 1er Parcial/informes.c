@@ -10,6 +10,17 @@
 #include "utn.h"
 #include "informes.h"
 
+/** \brief Submenu para informes
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return void
+ *
+ */
 void inf_subMenu(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CANT, sInstrumento* insLista, int INS_CANT)
 {
     int optionSubMenu = 0;
@@ -40,57 +51,49 @@ void inf_subMenu(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_C
         case 1:
             inf_puntoA(orqLista, ORQ_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 2:
             inf_puntoB(orqLista, ORQ_CANT, insLista, INS_CANT, musLista, MUS_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 3:
             inf_puntoC(orqLista, ORQ_CANT, musLista, MUS_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 4:
             inf_puntoD(musLista, MUS_CANT, insLista, INS_CANT, orqLista, ORQ_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 5:
             inf_puntoE(orqLista, ORQ_CANT, musLista, MUS_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 6:
             inf_puntoF(orqLista, ORQ_CANT, musLista, MUS_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 7:
             inf_puntoG(musLista, MUS_CANT, orqLista, ORQ_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 8:
             inf_puntoH(musLista, MUS_CANT, insLista, INS_CANT);
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         case 9:
@@ -99,8 +102,7 @@ void inf_subMenu(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_C
         default:
             printf("Las opciones correctas van del 1 al 9. Reingrese.");
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
             break;
 
         }
@@ -108,13 +110,20 @@ void inf_subMenu(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_C
     while(optionSubMenu != 9);
 }
 
+/** \brief Lista las orquestas de un lugar determinado ingresando el usuario.
+ *         Imprime ID de orquesta, nombre, tipo y lugar
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \return void
+ *
+ */
 void inf_puntoA(sOrquesta* orqLista, int ORQ_CANT)
 {
 
     char lugarAux[ORQ_LEN];
     int i;
     int isValid;
-    //int value;
 
     printf("Ingrese lugar de la orquesta: ");
     __fpurge(stdin);
@@ -123,8 +132,10 @@ void inf_puntoA(sOrquesta* orqLista, int ORQ_CANT)
     corregirNombreCompuesto(lugarAux);
     isValid = isAlphaNumeric(lugarAux);
 
+
     if(isValid == 1)
     {
+        printf("Orquestas en %s...\n", lugarAux);
         for(i = 0; i < ORQ_CANT; i++)
         {
 
@@ -138,10 +149,22 @@ void inf_puntoA(sOrquesta* orqLista, int ORQ_CANT)
     }
 }
 
+/** \brief Lista los musicos menores de 25 de edad.
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return void
+ *
+ */
 void inf_puntoB(sOrquesta* orqLista, int ORQ_CANT, sInstrumento* insLista, int INS_CANT, sMusico* musLista, int MUS_CANT)
 {
     int i;
 
+    printf("Musicos menores de 25...\n");
     for(i = 0; i < MUS_CANT; i++)
     {
 
@@ -154,6 +177,15 @@ void inf_puntoB(sOrquesta* orqLista, int ORQ_CANT, sInstrumento* insLista, int I
     }
 }
 
+/** \brief Lista las orquestas con menos de 6 musicos
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \return void
+ *
+ */
 void inf_puntoC(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CANT)
 {
 
@@ -161,6 +193,7 @@ void inf_puntoC(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CA
     int j;
     int contadorOrq = 0;
 
+    printf("Orquestas con menos de 6 musicos...\n");
     for(j=0; j < ORQ_CANT; j++)
     {
         for(i=0; i < MUS_CANT; i++)
@@ -183,6 +216,17 @@ void inf_puntoC(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CA
 
 }
 
+/** \brief Lista todos los instrumentos de una orquesta determinada, ingresando su ID.
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return void
+ *
+ */
 void inf_puntoD(sMusico* musLista, int MUS_CANT, sInstrumento* insLista, int INS_CANT, sOrquesta* orqLista, int ORQ_CANT)
 {
 
@@ -212,6 +256,7 @@ void inf_puntoD(sMusico* musLista, int MUS_CANT, sInstrumento* insLista, int INS
 
     if(isValid == 1)
     {
+        printf("Instrumentos de la orquesta %s\n", idAux);
         for(i = 0; i < ORQ_CANT; i++)
         {
             if(orqLista[i].id == atoi(idAux) && orqLista[i].isEmpty == 1)
@@ -236,6 +281,15 @@ void inf_puntoD(sMusico* musLista, int MUS_CANT, sInstrumento* insLista, int INS
     }
 }
 
+/** \brief Lista las orquestas completas.
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \return void
+ *
+ */
 void inf_puntoE(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CANT)
 {
 
@@ -245,6 +299,7 @@ void inf_puntoE(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CA
     int contadorCuer = 0;
     int contadorVien = 0;
 
+    printf("Orquestas completas...\n");
     for(j=0; j < ORQ_CANT; j++)
     {
         for(i=0; i < MUS_CANT; i++)
@@ -277,49 +332,78 @@ void inf_puntoE(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CA
 
 }
 
+/** \brief Imprime una o mas orquestas con la menor cantidad de musics
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \return void
+ *
+ */
 void inf_puntoF(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CANT)
 {
 
     int i;
     int j;
     int contadorMusicos = 0;
-    int menor = 0;
-    int flag = 0;
+    int menor;
+    int flag = 1;
 
-    for(j=0; j < ORQ_CANT; j++)
+    //Busco la cantidad de musicos mas chica
+    for (i=0; i<ORQ_CANT; i++)
     {
-        for(i=0; i < MUS_CANT; i++)
+        if (orqLista[i].isEmpty == 1)
         {
-            if(orqLista[j].id == atoi(musLista[i].idOrquesta) && musLista[i].isEmpty == 1 && orqLista[j].isEmpty == 1)
-            {
-                contadorMusicos++;
-            }
-        }
-
-        if (contadorMusicos >= 0 && flag == 0)
-        {
-
-            menor = contadorMusicos;
-            flag = 1;
-
-        }
-        else if(contadorMusicos < menor)
-        {
-
-            menor = contadorMusicos;
-
-        }
-
-        if(contadorMusicos <= menor && orqLista[j].isEmpty == 1)
-        {
-
-            printf("| %2i | %10s | %15s | %10s | Cant musicos: %2i |\n", orqLista[j].id, orqLista[j].nombre, orqLista[j].desc, orqLista[j].lugar, contadorMusicos);
             contadorMusicos = 0;
+            for (j=0; j<MUS_CANT; j++)
+            {
+                if (atoi(musLista[j].idOrquesta) == orqLista[i].id && musLista[j].isEmpty == 1)
+                    contadorMusicos++;
+            }
+            if (flag)
+            {
+                menor = contadorMusicos;
+                flag = 0;
+            }
+            if (contadorMusicos < menor)
+                menor = contadorMusicos;
+        }
+    }
+
+    //Busco si hay una o mas orquestas con menos musicos.
+    __fpurge(stdin);
+    printf("Orquesta(s) con menos musicos...\n");
+    for (i=0; i<ORQ_CANT; i++)
+    {
+        contadorMusicos = 0;
+        if (orqLista[i].isEmpty == 1)
+        {
+            for (j=0; j<MUS_CANT; j++)
+            {
+                if (atoi(musLista[j].idOrquesta) == orqLista[i].id && musLista[j].isEmpty == 1)
+                {
+                    contadorMusicos++;
+                }
+            }
+            if (contadorMusicos == menor)
+            {
+                printf("| %2i | %10s | %15s | %10s | Cant musicos: %2i |\n", orqLista[i].id, orqLista[i].nombre, orqLista[i].desc, orqLista[i].lugar, contadorMusicos);
+            }
         }
     }
     flag = 0;
 }
 
+/** \brief Imprime el promedio de instrumentos por orquesta
+ *
+ * \param sOrquesta* orqLista La lista completa de Orquestas
+ * \param int ORQ_CANT El tamanio de la lista de Orquestas
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \return void
+ *
+ */
 void inf_puntoG(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT)
 {
 
@@ -353,13 +437,36 @@ void inf_puntoG(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CA
 
 }
 
+/** \brief Lista los musicos que NO tocan instrumentos de viento, ordenados por apellido
+ *
+ * \param sMusico* musLista La lista completa de Musicos
+ * \param int MUS_CANT El tamanio de la lista de Musicos
+ * \param sInstrumento* insLista La lista completa de Instrumentos
+ * \param int INS_CANT El tamanio de la lista de Instrumentos
+ * \return void
+ *
+ */
 void inf_puntoH(sMusico* musLista, int MUS_CANT, sInstrumento* insLista, int INS_CANT)
 {
 
     int i;
     int j;
-    //char tipoAux[INS_LEN];
+    sMusico miAuxiliar;
 
+    //Ordenamiento por insercion
+    for (i=1; i < MUS_CANT; i++)
+    {
+        miAuxiliar = musLista[i];
+        j = i-1;
+        while (strcmp(musLista[j].apellido, miAuxiliar.apellido) > 0 && j>=0)
+        {
+            musLista[j+1] = musLista[j];
+            j--;
+        }
+        musLista[j+1] = miAuxiliar;
+    }
+
+    printf("Musicos que no tocan instrumentos de viento: \n");
     for(i = 0; i < MUS_CANT; i++)
     {
         for(j = 0; j < INS_CANT; j++)

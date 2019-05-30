@@ -8,6 +8,7 @@
 #include "Musico.h"
 #include "utn.h"
 
+
 int mus_init(sMusico* musLista, int MUS_CANT)
 {
 
@@ -36,6 +37,7 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
     if(indice == -1)
     {
         printf("No hay lugar.\n");
+        pause();
         return ret;
     }
     else
@@ -55,6 +57,12 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
                 strncpy(musLista[indice].nombre, musNuevo.nombre, MUS_LEN);
 
             }
+            else
+            {
+
+                printf("Debe ingresar solo letras. Reintente.\n");
+
+            }
         }
         while(isValid != 1);
 
@@ -72,6 +80,12 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
                 strncpy(musLista[indice].apellido, musNuevo.apellido, MUS_LEN);
 
             }
+            else
+            {
+
+                printf("Debe ingresar solo letras. Reintente.\n");
+
+            }
         }
         while(isValid != 1);
 
@@ -82,10 +96,17 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
             fgets(musNuevo.edad, 3, stdin);
             quitarSaltoDeLinea(musNuevo.edad);
             isValid = isInteger(musNuevo.edad);
-            if(isValid == 1)
+            if(isValid == 1 && (atoi(musNuevo.edad) > 17 && atoi(musNuevo.edad) < 101))
             {
 
                 strncpy(musLista[indice].edad, musNuevo.edad, 3);
+
+            }
+            else if(atoi(musNuevo.edad) < 18 || atoi(musNuevo.edad) > 100)
+            {
+
+                printf("Debe ingresar solo numeros y la edad del musico debe ser mayor a 18 y menor de 100.\n");
+                isValid = 0;
 
             }
         }
@@ -104,6 +125,12 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
                 strncpy(musLista[indice].idInstrumento, musNuevo.idInstrumento, 5);
 
             }
+            else
+            {
+
+                printf("Debe ingresar solo numeros. Reintente.\n");
+
+            }
         }
         while(isValid != 1);
 
@@ -118,6 +145,12 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
             {
 
                 strncpy(musLista[indice].idOrquesta, musNuevo.idOrquesta, 5);
+
+            }
+            else
+            {
+
+                printf("Debe ingresar solo numeros. Reintente.\n");
 
             }
         }
@@ -150,8 +183,7 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
             musLista[indice].isEmpty = 1;
             printf("Musico cargado exitosamente!\n");
             __fpurge(stdin);
-            printf("Prsione cualquier tecla para continuar...");
-            getchar();
+            pause();
         }
         ret = 0;
     }
@@ -162,12 +194,11 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
 int mus_getFreeSpot(sMusico* musLista, int MUS_CANT)
 {
 
-    int index = -1, i=0;
+    int index, i=0;
 
     for(i=0; i<MUS_CANT; i++)
     {
-
-        if( musLista[i].isEmpty == 0)
+        if(musLista[i].isEmpty == 0)
         {
             index = i;
             break;
@@ -185,7 +216,9 @@ int mus_baja(sMusico* musLista, int MUS_CANT)
     char autorBorrar;
     sMusico musico;
 
-    printf("Ingrese codigo: ");
+    mus_listarTodos(musLista, MUS_CANT);
+
+    printf("Ingrese id a eliminar: ");
     scanf("%d", &id);
 
     indice = mus_findById(musLista, MUS_CANT, id);
@@ -216,11 +249,9 @@ int mus_baja(sMusico* musLista, int MUS_CANT)
             printf("Se ha eliminado el musico.\n\n");
             ret = 0;
         }
-        __fpurge(stdin);
-        printf("Prsione cualquier tecla para continuar...");
-        getchar();
     }
-
+    __fpurge(stdin);
+    pause();
     return ret;
 }
 
@@ -256,26 +287,31 @@ void mus_mostrarUnoEdit(sMusico musico)
 
 void mus_listarTodos(sMusico* musLista, int MUS_CANT)
 {
-    int i;
+    int i, j;
+    sMusico miAuxiliar;
 
-    /*printf("==========================================================================================\n"
-           "||                                  Listado de Orquestas                                ||\n"
-           "==========================================================================================\n"
-           "|  ID  |     NOMBRE      |    APELLIDO     |          ORQUESTA         |   INSTRUMENTO   |\n"
-           "==========================================================================================\n");*/
+    //Ordeno por insercion usando id
+    for (i=1; i < MUS_CANT; i++)
+    {
+        miAuxiliar = musLista[i];
+        j = i-1;
+        while (musLista[j].id > miAuxiliar.id && j>=0)
+        {
+            musLista[j+1] = musLista[j];
+            j--;
+        }
+        musLista[j+1] = miAuxiliar;
+    }
+
     for(i = 0; i < MUS_CANT; i++)
     {
-
         if(musLista[i].isEmpty == 1)
         {
 
             mus_mostrarUno(musLista[i]);
 
         }
-
     }
-    /*printf("==========================================================================================\n");*/
-
 }
 
 void mus_listarTodosEdit(sMusico* musLista, int MUS_CANT)
@@ -331,8 +367,7 @@ int mus_modificacion(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int O
 
         printf("No hay ningun musico con el id %s\n", idAux);
         __fpurge(stdin);
-        printf("Prsione cualquier tecla para continuar...");
-        getchar();
+        pause();
     }
     else
     {
@@ -341,8 +376,8 @@ int mus_modificacion(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int O
             musico = musLista[index];
 
             system("clear");
-            printf("Musico a modificar: \n");
-            mus_mostrarUno(musico);
+            printf("Musico a modificar: \n\n");
+            printf("| ID: %d | Nombre: %s | Apellido: %s | Edad: %s | ID Orquesta: %s |\n\n", musico.id, musico.nombre, musico.apellido, musico.edad, musico.idOrquesta);
 
             printf("1.- Edad.\n");
             printf("2.- Codigo de Orquesta.\n");
@@ -370,6 +405,8 @@ int mus_modificacion(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int O
 
                     }
                     printf("Edad modificada exitosamente!\n");
+                    __fpurge(stdin);
+                    pause();
                 }
                 while(isValid != 1);
                 break;
@@ -389,6 +426,8 @@ int mus_modificacion(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int O
 
                     }
                     printf("Codigo modificado exitosamente!\n");
+                    __fpurge(stdin);
+                    pause();
                 }
                 while(isValid != 1);
 
@@ -408,7 +447,9 @@ int mus_modificacion(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int O
 
             default:
                 printf("Error. Las opciones van del 1 al 3.");
-
+                __fpurge(stdin);
+                pause();
+                break;
             }
 
         }

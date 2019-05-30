@@ -14,5 +14,6 @@ char getChain(char *mensaje);
 void corregirNombreCompuesto(char *cadena);
 void quitarSaltoDeLinea(char *cadena);
 char* strlwr(char* s);
+void pause();
 
 #endif // UTN_H_INCLUDED

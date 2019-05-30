@@ -272,7 +272,7 @@
 
 1558482284 /home/alumno/Brizuela.Adrian/Brizuela.Adrian 1er Parcial/informes.h
 
-1559074137 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/hardcode.c
+1559249432 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/hardcode.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio_ext.h>
@@ -293,9 +293,9 @@
 
 1558988552 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Instrumento.h
 
-1558483982 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/utn.h
+1559246071 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/utn.h
 
-1559195329 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/informes.c
+1559249869 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/informes.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -310,7 +310,7 @@
 
 1559080054 /home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/informes.h
 
-1559074137 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Instrumento.c
+1559249587 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Instrumento.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio_ext.h>
@@ -319,7 +319,7 @@
 	"Instrumento.h"
 	"utn.h"
 
-1559192576 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/main.c
+1559246735 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/main.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -332,7 +332,7 @@
 	"utn.h"
 	"informes.h"
 
-1558483982 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Musico.c
+1559249558 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Musico.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio_ext.h>
@@ -343,7 +343,7 @@
 	"Musico.h"
 	"utn.h"
 
-1558988827 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Orquesta.c
+1559249574 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/Orquesta.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio_ext.h>
@@ -352,7 +352,7 @@
 	"Orquesta.h"
 	"utn.h"
 
-1558483982 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/utn.c
+1559246735 source:/home/utn/Documentos/UTN/primerParcialLabo1-master/Brizuela.Adrian 1er Parcial/utn.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
