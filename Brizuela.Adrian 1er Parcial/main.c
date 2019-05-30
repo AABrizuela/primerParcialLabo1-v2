@@ -58,9 +58,9 @@ int main()
     mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 18, "Mus18", "AMus18", "42", "3", "", "1", "");
     mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 19, "Mus19", "AMus19", "53", "3", "", "1", "");
     mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 20, "Mus20", "AMus20", "35", "3", "", "2", "");
-    mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 21, "Mus21", "AMus21", "35", "3", "", "2", "");
-    mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 22, "Mus22", "AMus22", "35", "3", "", "4", "");
-    mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 23, "Mus23", "AMus23", "35", "3", "", "4", "");
+    mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 21, "Mus21", "AMus21", "38", "3", "", "2", "");
+    mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 22, "Mus22", "AMus22", "26", "3", "", "4", "");
+    mus_hardcode(insLista, INS_CANT, orqLista, ORQ_CANT, musLista, MUS_CANT, 23, "Mus23", "AMus23", "27", "3", "", "4", "");
 
     do
     {

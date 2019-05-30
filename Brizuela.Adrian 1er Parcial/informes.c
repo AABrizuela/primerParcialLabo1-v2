@@ -193,11 +193,22 @@ void inf_puntoD(sMusico* musLista, int MUS_CANT, sInstrumento* insLista, int INS
     int k;
     int isValid;
 
-    printf("Ingrese id de la orquesta: ");
-    __fpurge(stdin);
-    fgets(idAux, 2, stdin);
-    quitarSaltoDeLinea(idAux);
-    isValid = isInteger(idAux);
+    printf("Listado de Orquestas: \n");
+    orq_listarTodos(orqLista, ORQ_CANT);
+
+    do
+    {
+        printf("Ingrese id de la orquesta: ");
+        __fpurge(stdin);
+        fgets(idAux, 2, stdin);
+        quitarSaltoDeLinea(idAux);
+        isValid = isInteger(idAux);
+        if(isValid != 1)
+        {
+            printf("Error. Debe ingresar un numero, reintente.");
+        }
+    }
+    while(isValid != 1);
 
     if(isValid == 1)
     {
@@ -291,7 +302,9 @@ void inf_puntoF(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CA
             menor = contadorMusicos;
             flag = 1;
 
-        }else if(contadorMusicos < menor){
+        }
+        else if(contadorMusicos < menor)
+        {
 
             menor = contadorMusicos;
 
@@ -307,31 +320,36 @@ void inf_puntoF(sOrquesta* orqLista, int ORQ_CANT, sMusico* musLista, int MUS_CA
     flag = 0;
 }
 
-void inf_puntoG(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT){
+void inf_puntoG(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT)
+{
 
     int i;
-    int j;
-    int contOrq = 0;
-    int contMus = 0;
-    int promedio;
+    //int j;
+    float contOrq = 0;
+    float contMus = 0;
+    float promedio = 0;
 
-    for(i = 0; i < ORQ_CANT; i++){
+    for(i = 0; i < ORQ_CANT; i++)
+    {
 
-        if(orqLista[i].isEmpty == 1){
+        if(orqLista[i].isEmpty == 1)
+        {
             contOrq++;
         }
     }
 
-    for(i = 0; i < MUS_CANT; i++){
+    for(i = 0; i < MUS_CANT; i++)
+    {
 
-        if(musLista[i].isEmpty == 1){
+        if(musLista[i].isEmpty == 1)
+        {
             contMus++;
         }
     }
 
     promedio = contMus / contOrq;
 
-    printf("El promedio de instrumentos por orquesta es: %i\n", promedio);
+    printf("El promedio de instrumentos por orquesta es: %.2f\n", promedio);
 
 }
 
@@ -340,19 +358,20 @@ void inf_puntoH(sMusico* musLista, int MUS_CANT, sInstrumento* insLista, int INS
 
     int i;
     int j;
-    char tipoAux[INS_LEN];
+    //char tipoAux[INS_LEN];
 
     for(i = 0; i < MUS_CANT; i++)
     {
         for(j = 0; j < INS_CANT; j++)
         {
-            if(strncmp(insLista[j].desc, "Viento-madera", MUS_LEN) != 0 && strncmp(insLista[j].desc, "Viento-metal", MUS_LEN) != 0 && musLista[i].isEmpty == 1)
+            if(atoi(musLista[i].idInstrumento) == insLista[j].id && insLista[j].isEmpty == 1 && musLista[i].isEmpty == 1)
             {
-                strncpy(tipoAux, insLista[j].desc, INS_LEN);
-                printf("| %10s | %10s | %2s | %10s |\n", musLista[i].nombre, musLista[i].apellido, musLista[i].edad, tipoAux);
-                break;
+                if(atoi(insLista[j].tipo) != 2 && atoi(insLista[j].tipo) != 3)
+                {
+                    printf("| %10s | %10s | %2s | %10s |\n", musLista[i].nombre, musLista[i].apellido, musLista[i].edad, insLista[j].desc);
+                    break;
+                }
             }
         }
     }
-
 }
