@@ -138,7 +138,7 @@ int ins_alta(sInstrumento* insLista, int INS_CANT)
 int ins_getFreeSpot(sInstrumento* insLista, int INS_CANT)
 {
 
-    int index, i=0;
+    int index = -1, i=0;
 
     for(i=0; i<INS_CANT; i++)
     {

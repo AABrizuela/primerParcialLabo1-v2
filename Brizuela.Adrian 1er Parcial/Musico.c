@@ -194,7 +194,7 @@ int mus_alta(sMusico* musLista, int MUS_CANT, sOrquesta* orqLista, int ORQ_CANT,
 int mus_getFreeSpot(sMusico* musLista, int MUS_CANT)
 {
 
-    int index, i=0;
+    int index = -1, i=0;
 
     for(i=0; i<MUS_CANT; i++)
     {

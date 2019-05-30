@@ -142,7 +142,7 @@ int orq_alta(sOrquesta* orqLista, int ORQ_CANT)
 int orq_getFreeSpot(sOrquesta* orqLista, int ORQ_CANT)
 {
 
-    int index, i=0;
+    int index = -1, i=0;
 
     for(i=0; i<ORQ_CANT; i++)
     {
